@@ -1,18 +1,19 @@
 {
-  "name": "firepad",
-  "main": "./lib/firepad",
-  "version": "0.3.1",
-  "description": "Collaborate on Code using Firepad - by Firebase",
+  "name": "nucleus",
+  "main": "./lib/nucleus",
+  "version": "0.0.1",
+  "description": "True Collaboration in Atom",
   "activationEvents": [
-    "firepad:share",
-    "firepad:unshare"
+    "nucleus:enter",
+    "nucleus:exit"
   ],
-  "repository": "https://github.com/firebase/atom-firepad",
+  "repository": "https://github.com/faceyspacey/nucleus",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
   },
   "dependencies": {
-    "firebase": "~1.0.5"
+    "firebase": "~1.0.5",
+	"underscore-plus": "^1.2.1"
   }
 }

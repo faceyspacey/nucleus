@@ -1,0 +1,14 @@
+{
+  '.workspace': {
+    'ctrl-alt-e': 'nucleus:evaluate'
+  },
+  '.workspace': {
+    'ctrl-alt-c': 'nucleus:chat'
+  },
+  '.workspace': {
+    'ctrl-alt-l': 'nucleus:login'
+  },
+  '.workspace': {
+    'ctrl-alt-g': 'nucleus:go'
+  },
+}

@@ -1,0 +1,7 @@
+{
+  'context-menu': {
+    '.editor': {
+      'Evaluate in Application!': 'nucleus:evaluate'
+    }
+  }
+}
