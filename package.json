@@ -15,5 +15,6 @@
   "dependencies": {
     "firebase": "~1.0.5",
 	"underscore-plus": "^1.2.1"
+	"gitty": "^1.2.1",
   }
 }

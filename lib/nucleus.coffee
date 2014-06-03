@@ -3,15 +3,24 @@ Project = require './sync/project'
 module.exports =
   activate: (state) ->
 		@enter = new EnterFormView(state.enter)
-		atom.workspaceView.command "nucleus:toggle", => @enter.toggle()
+		atom.workspaceView.command "nucleus:enter", => @enter.toggle()
 		
-    @project = new Project(state.project)
-		atom.workspaceView.command "nucleus:evaluate", => @project.evalSelection()
-
+		@chat = new ChatFormView()
+		atom.workspaceView.command "nucleus:chat", => @chat.toggle()
+		
+		@login = new LoginFormView()
+		atom.workspaceView.command "nucleus:login", => @login.toggle()
+		
+		@go = new GoFormView()
+		atom.workspaceView.command "nucleus:go", => @go.toggle()
+		
+		
   deactivate: ->
-    @enter.destroy()
-		@project.destroy()
+    @enter.detach()
+		@chat.detach()
+		@login.detach()
+		@go.detach()
+
 
   serialize: ->
     enter: @enter.serialize()
-		project: @project.serialize()
