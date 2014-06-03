@@ -13,7 +13,13 @@ module.exports =
 		
 		@go = new GoFormView()
 		atom.workspaceView.command "nucleus:go", => @go.toggle()
-		
+
+
+		atom.workspaceView.command "nucleus:exit", => 
+			@enter.detach() #also detachs iframe
+			@chat.detach()
+			@login.detach()
+			@go.detach()
 		
   deactivate: ->
     @enter.detach()

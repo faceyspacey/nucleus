@@ -1,5 +1,11 @@
 {
   '.workspace': {
+    'ctrl-alt-n': 'nucleus:enter'
+  },
+  '.workspace': {
+    'esc': 'nucleus:exit'
+  },
+  '.workspace': {
     'ctrl-alt-e': 'nucleus:evaluate'
   },
   '.workspace': {
