@@ -1,0 +1,7 @@
+'.workspace': 
+	'ctrl-alt-n': 'nucleus:enter'
+	'esc': 'nucleus:exit'
+	'ctrl-alt-e': 'nucleus:evaluate'
+	'ctrl-alt-c': 'nucleus:chat'
+	'ctrl-alt-l': 'nucleus:login'
+	'ctrl-alt-g': 'nucleus:go'
