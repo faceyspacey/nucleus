@@ -1,32 +1,9 @@
-Project = require './sync/project'
+EnterFormView = require './views/forms/enter'
 
-module.exports =
-  activate: (state) ->
+module.exports = 
+	activate: (state) ->
+		window.nucleus = {}
 		@enter = new EnterFormView(state.enter)
-		atom.workspaceView.command "nucleus:enter", => @enter.toggle()
+		atom.workspaceView.command "nucleus:enter", => @enter.attach()
 		
-		@chat = new ChatFormView()
-		atom.workspaceView.command "nucleus:chat", => @chat.toggle()
-		
-		@login = new LoginFormView()
-		atom.workspaceView.command "nucleus:login", => @login.toggle()
-		
-		@go = new GoFormView()
-		atom.workspaceView.command "nucleus:go", => @go.toggle()
-
-
-		atom.workspaceView.command "nucleus:exit", => 
-			@enter.detach() #also detachs iframe
-			@chat.detach()
-			@login.detach()
-			@go.detach()
-		
-  deactivate: ->
-    @enter.detach()
-		@chat.detach()
-		@login.detach()
-		@go.detach()
-
-
-  serialize: ->
-    enter: @enter.serialize()
+	

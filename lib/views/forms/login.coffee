@@ -15,7 +15,7 @@ class LoginFormView extends FormView
 		email = @emailInput.getText()
 		password = @passwordInput.getText()
 		
-		ref = new Firebase('https://faceyspacey.farebasio.com'+window.NUCLEUS_REPO+'/events')
+		ref = new Firebase('https://faceyspacey.farebasio.com'+window.nucleus.project.repoPath+'/events')
 		ref.push({
 			object: 'Meteor',
 			method: 'loginWithPassword'

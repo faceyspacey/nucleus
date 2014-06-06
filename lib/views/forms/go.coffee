@@ -20,7 +20,7 @@ class GoFormView extends FormView
 		sendEvent('MobiRouter')
 		
   sendEvent: (routerType)->
-		ref = new Firebase('https://faceyspacey.farebasio.com'+window.NUCLEUS_REPO+'/events')
+		ref = new Firebase('https://faceyspacey.farebasio.com'+window.nucleus.project.repoPath+'/events')
 		ref.push({
 			object: routerType,
 			method: 'go'

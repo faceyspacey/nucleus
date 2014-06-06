@@ -12,9 +12,9 @@ class ChatFormView extends FormView
 
   submitRight: ->
     message = @messageInput.getText()
-		ref = new Firebase('https://faceyspacey.farebasio.com'+window.NUCLEUS_REPO+'/messages')
+		ref = new Firebase('https://faceyspacey.farebasio.com'+window.nucleus.project.repoPath+'/messages')
 		ref.push
-			user: window.NUCLEUS_USER
+			user: window.nucleus.project.userName
 			message: message
 
 
