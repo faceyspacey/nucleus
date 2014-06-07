@@ -25,6 +25,7 @@ First do these things:
 * study the API: https://atom.io/docs/api/v0.101.0/api (particularly workspace, editor; models + views)
 * study the Space Pen coffeescript view system: http://atom.github.io/space-pen
 * grasp how the commonjs require() + module.exports pattern works
+* analyze Firebase API: https://www.firebase.com/docs/javascript/firebase/index.html
 * login to my Firebase account and go to the playground: https://faceyspacey.firebaseio.com ...you can observe the data change here in realtime in relation to Nucleus doing its thing!
 
 Where to start in the code:
