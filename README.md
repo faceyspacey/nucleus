@@ -2,7 +2,7 @@
 
 ## HOW TO GET IT RUNNIN
 
-clone this obviously 
+* clone this obviously 
 
 * Enable package with `apm link --dev /path/to/nucleus`
 
