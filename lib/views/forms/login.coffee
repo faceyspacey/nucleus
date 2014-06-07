@@ -15,12 +15,10 @@ class LoginFormView extends FormView
 		email = @emailInput.getText()
 		password = @passwordInput.getText()
 		
-		ref = new Firebase('https://faceyspacey.farebasio.com'+window.nucleus.project.repoPath+'/events')
-		ref.push({
-			object: 'Meteor',
-			method: 'loginWithPassword'
+		window.nucleus.db.Events().push
+			object: Meteor
+			method: 'loginWithPassword',
 			arguments: [email, password]
-		});
 
 
 module.exports = LoginFormView

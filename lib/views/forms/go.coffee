@@ -14,17 +14,9 @@ class GoFormView extends FormView
 		super 'MobiRouter'
 
 	submitLeft: ->
-		sendEvent('Router')
+		window.app.go('Router', [@routeInput.getText()])
 		
 	submitRight: ->
-		sendEvent('MobiRouter')
-		
-  sendEvent: (routerType)->
-		ref = new Firebase('https://faceyspacey.farebasio.com'+window.nucleus.project.repoPath+'/events')
-		ref.push
-			object: routerType
-			method: 'go'
-			arguments: [@routeInput.getText()]
-
+		window.app.go('MobiRouter', [@routeInput.getText()])
 
 module.exports = GoFormView
