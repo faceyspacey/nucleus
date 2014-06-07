@@ -18,7 +18,7 @@
 
 * To evaluate code, make a selection and right click the editor--you will see an "Evaluate in Application!" option.
 
-* Don't forget the Nucleus menu in the top bar!
+* Don't forget the Nucleus menu in the top bar! (and the corresponding keymaps you will see there)
 
 ## HOW TO HACK IT
 
