@@ -4,7 +4,7 @@
 
 * clone this obviously 
 
-* Enable package with `apm link --dev /path/to/nucleus`
+* Enable package with `apm link --dev /path/to/nucleus` (it will be symlinked in ~/.atom/dev/packages)
 
 * Then run dev version of Atom with `atom --dev`
 
