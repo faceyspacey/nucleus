@@ -1,6 +1,6 @@
 FormView = require './abstract_form'
 IframeView = require '../iframe'
-Project = require '../../sync/project'
+Project = require '../../core/project'
 {$, EditorView} = require 'atom'
 
 
@@ -8,7 +8,6 @@ class EnterFormView extends FormView
 	@form: ->
 		@subview 'nameInput', new EditorView(mini: true, placeholderText: 'User Name')
 		@subview 'githubInput', new EditorView(mini: true, placeholderText: 'Github Repo URL')
-		@subview 'dirInput', new EditorView(mini: true, placeholderText: 'Local Directory')
 		@subview 'hostInput', new EditorView(mini: true, placeholderText: 'Local Host URL')
 		@subview 'mongoInput', new EditorView(mini: true, placeholderText: 'Mongo URL')
 
@@ -18,16 +17,17 @@ class EnterFormView extends FormView
 	submitRight: ->
 		name = window.NUCLEUS_USER = @nameInput.getText()
 		github = @githubInput.getText()
-		dir = @dirInput.getText()
 		host = @hostInput.getText()
 		mongo = @mongoInput.getText()
 		
-		@project = new Project(name, github, dir, host, mongo, this)
+		@project = new Project(this, name, github, host, mongo)
 		@project.initialize();
 			
-	displayIframe: (host) ->
+	displayIframe: (host, callback) ->
 		@iframe = @iframe || new IframeView()
 		@iframe.attach(host)
+		@iframe.iframe.on 'load', =>
+			callback(@iframe.iframe);
 		
 	detach: ->
 		@iframe.detach()

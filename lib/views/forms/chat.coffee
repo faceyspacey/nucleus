@@ -4,18 +4,15 @@ FormView = require './abstract_form'
 
 
 class ChatFormView extends FormView
-	form: ->
+	@form: ->
 		@subview 'messageInput', new EditorView(mini: true, placeholderText: 'Enter Message')
 	
-	buttonRight: ->
+	@buttonRight: ->
 		super 'SEND MESSAGE'
 
   submitRight: ->
     message = @messageInput.getText()
-		ref = new Firebase('https://faceyspacey.farebasio.com'+window.nucleus.project.repoPath+'/messages')
-		ref.push
-			user: window.nucleus.project.userName
-			message: message
+		window.nucleus.workspace.newMessage(message)
 
 
 module.exports = ChatFormView

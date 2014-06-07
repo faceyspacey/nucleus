@@ -4,11 +4,11 @@ FormView = require './abstract_form'
 
 
 class LoginFormView extends FormView
-	form: ->
+	@form: ->
 		@subview 'emailInput', new EditorView(mini: true, placeholderText: 'Enter Email')
 		@subview 'passwordInput', new EditorView(mini: true, placeholderText: 'Enter Password')
 	
-	buttonRight: ->
+	@buttonRight: ->
 		super 'LOGIN'
 
   submitRight: ->

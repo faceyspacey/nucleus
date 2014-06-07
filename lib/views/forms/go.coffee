@@ -4,13 +4,13 @@ FormView = require './abstract_form'
 
 
 class GoFormView extends FormView
-	form: ->
+	@form: ->
 		@subview 'routeInput', new EditorView(mini: true, placeholderText: 'Enter Route')
 		
-	buttonLeft: ->
+	@buttonLeft: ->
 		super 'Router'
 			
-	buttonRight: ->
+	@buttonRight: ->
 		super 'MobiRouter'
 
 	submitLeft: ->
@@ -21,11 +21,10 @@ class GoFormView extends FormView
 		
   sendEvent: (routerType)->
 		ref = new Firebase('https://faceyspacey.farebasio.com'+window.nucleus.project.repoPath+'/events')
-		ref.push({
-			object: routerType,
+		ref.push
+			object: routerType
 			method: 'go'
 			arguments: [@routeInput.getText()]
-		});
 
 
 module.exports = GoFormView
