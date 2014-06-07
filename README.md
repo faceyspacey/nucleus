@@ -4,19 +4,19 @@
 
 clone this obviously 
 
-Enable package with `apm link --dev /path/to/nucleus`
+* Enable package with `apm link --dev /path/to/nucleus`
 
-Then run dev version of Atom with `atom --dev`
+* Then run dev version of Atom with `atom --dev`
 
-Have Atom console always open with `crtl+opt+i`
+* Have Atom console always open with `crtl+opt+i`
 
-Trigger Nucleus from the Nucleus > Enter Nucleus menu option or: `crtl+opt+n`
+* Trigger Nucleus from the Nucleus > Enter Nucleus menu option or: `crtl+opt+n`
 
-You will see a form popup appear. You can submit the form with no options and it will know what to do.
+* You will see a form popup appear. You can submit the form with no options and it will know what to do.
 
-A key trick is you can refresh the app by typing `command+r` like refreshing a Chrome browser window. But your console has to be focused for the command to work. 
+* A key trick is you can refresh the app by typing `command+r` like refreshing a Chrome browser window. But your console has to be focused for the command to work. 
 
-To evaluate code, make a selection and right click the editor--you will see an "Evaluate in Application!" option.
+* To evaluate code, make a selection and right click the editor--you will see an "Evaluate in Application!" option.
 
 
 ## HOW TO HACK IT
