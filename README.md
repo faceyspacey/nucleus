@@ -56,7 +56,7 @@ How Spec Pen Works:
 * the entire adapter system goes a long way to make sure that we can truly replace an adapter with a different one. This means in some places code is not what you would typically expect, and goes to great lengths to make sure no code moves out of the principle object responsible for it.
 * the route replication system in the `app_adapter.js` is worth analyzing
 * just start with `project.js` and drill down from there. 
-
+* we simply change adapters here: https://github.com/faceyspacey/nucleus/blob/master/lib/core/config/adapter_config.js
 
 ##TO DO:
 
