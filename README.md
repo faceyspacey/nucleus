@@ -2,7 +2,9 @@
 
 ## HOW TO GET IT RUNNIN
 
-Enable package with `apm link --dev /path/to/your/package`
+clone this obviously 
+
+Enable package with `apm link --dev /path/to/nucleus`
 
 Then run dev version of Atom with `atom --dev`
 
