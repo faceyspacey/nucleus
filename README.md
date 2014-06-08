@@ -35,6 +35,7 @@ Where to start in the code:
 
 * https://github.com/faceyspacey/nucleus/blob/master/package.json (main key --> ./lib/nucleus.coffee)
 * https://github.com/faceyspacey/nucleus/blob/master/lib/nucleus.coffee (--> ./lib/views/forms/enter)
+* https://github.com/faceyspacey/nucleus/blob/master/lib/views/forms/enter.coffee (--> new Project)
 * https://github.com/faceyspacey/nucleus/blob/master/lib/core/project.js (like a controller --> adapters)
 
 
@@ -60,6 +61,7 @@ How Spec Pen Works:
 * the route replication system in the `app_adapter.js` is worth analyzing
 * just start with `project.js` and drill down from there. 
 * we simply change adapters here: https://github.com/faceyspacey/nucleus/blob/master/lib/core/config/adapter_config.js
+* lots of callbacks are used, even though they may seem unneeded. But the idea is to change switch control flow over to an adapter so the adapter maintains single responsibility for its purpse, and then return control back to client code. For example, i copied Firebase's `on()` event method for many non-firebase things. Look in project.js
 
 ##TIPS ON ATOM
 * all atom API calls are in: https://github.com/faceyspacey/nucleus/blob/master/lib/core/adapters/workspace/atom/workspace_adapter.js
@@ -74,10 +76,11 @@ How Spec Pen Works:
 * you will notice that Firebase is really flexible. Basically u have URI's at our host, i.e. any path, and u can reference it and start adding child data to it. It's infinitely recursive. 
 * You don't need a URI to exist to get a reference to it and start adding data to it. So `var reference =  new Firebase('https://faceyspacey.firebaseio.com/india/punjab/chandigarh/people/charan)` will immediately return a reference, and you can add data to it, and if you do, all the parent folders will be created for you (though only holding one node)
 * u can use `ref.child('some_path)` to get a child path
-* use `ref.one('child_added', function(snapshot) {})` to get ur handler function called every time a child document is added
+* use `ref.on('event_name', callback)` to assign a handler that will be called on any changes to the reference
+* use `ref.on('child_added', function(snapshot) {})` to get ur handler function called every time a child document is added
 * the `snapshot` param has methods: `snapshot.val()`, `snapshot.name()` and `snapshot.ref()`. The first retrieves the doc, the second the key, and the last a reference from which you can use like the above reference
-* use `ref.once('value', func)` to basically "get" the data at a location, like a `findOne()` call in meteor
-* use `.push()` to essentially add docs with a generated key. It doesn't really appear to be an array to me, just more of the same recursive stuff with hash key
+* use `ref.once('value', func)` to basically "get" the data at a location, like a `findOne()` call in meteor. `'value'` gets everything at the current reference, whereas `'child_added'` only gets future additions.
+* use `.push()` to essentially add docs with a generated key. It doesn't really appear to be an array to me, just more of the same recursive stuff with hash key. (note `.set()` is a basic call to replace the entire value at a reference location. When u first learn Firebase, u start by trying `ref.set(someValue)`.
 * everything related to firebase is hidden behind the db adapter interface, so you can learn all you need by seeing it in action here: https://github.com/faceyspacey/nucleus/blob/master/lib/core/adapters/database/firebase/db_adapter.js
 
 ##TO DO:
