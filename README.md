@@ -61,6 +61,25 @@ How Spec Pen Works:
 * just start with `project.js` and drill down from there. 
 * we simply change adapters here: https://github.com/faceyspacey/nucleus/blob/master/lib/core/config/adapter_config.js
 
+##TIPS ON ATOM
+* all atom API calls are in: https://github.com/faceyspacey/nucleus/blob/master/lib/core/adapters/workspace/atom/workspace_adapter.js
+* search that page for `atom.workspace` and `atom.workspaceView` to find them
+* views extend from Space Pen's View and they themselves extend from jQuery. So you can use `.remove()` to remove them. 
+* there's a concept of `model` vs `view` in Atom. Views are the jquery/space-pen objects and the fat model's do the work
+* there's a reason i assigned `window.nucleus = nucleus`. The reason is because atom is configured that way. `atom` is a global var. So are keeping a similar "interface"
+
+
+##TIPS ON FIREBASE
+* open up https://faceyspacey.firebaseio.com and open the console and start practicing firebase calls while looking at the data. Firebase is already included on this page
+* you will notice that Firebase is really flexible. Basically u have URI's at our host, i.e. any path, and u can reference it and start adding child data to it. It's infinitely recursive. 
+* You don't need a URI to exist to get a reference to it and start adding data to it. So `var reference =  new Firebase('https://faceyspacey.firebaseio.com/india/punjab/chandigarh/people/charan)` will immediately return a reference, and you can add data to it, and if you do, all the parent folders will be created for you (though only holding one node)
+* u can use `ref.child('some_path)` to get a child path
+* use `ref.one('child_added', function(snapshot) {})` to get ur handler function called every time a child document is added
+* the `snapshot` param has methods: `snapshot.val()`, `snapshot.name()` and `snapshot.ref()`. The first retrieves the doc, the second the key, and the last a reference from which you can use like the above reference
+* use `ref.once('value', func)` to basically "get" the data at a location, like a `findOne()` call in meteor
+* use `.push()` to essentially add docs with a generated key. It doesn't really appear to be an array to me, just more of the same recursive stuff with hash key
+* everything related to firebase is hidden behind the db adapter interface, so you can learn all you need by seeing it in action here: https://github.com/faceyspacey/nucleus/blob/master/lib/core/adapters/database/firebase/db_adapter.js
+
 ##TO DO:
 
 * test and get all this to work again. Since it's been refactored, it hasnt been forced to work again.
