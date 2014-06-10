@@ -5,22 +5,32 @@
 @import "ui-variables";
 
 .nucleus-frame {
-  width: 320px;
-  overflow-x: hidden;
+  width: 400px;
+	height: 100%;
+	overflow: scroll;
+	position: relative;
   background: white;
   .block {
     margin-bottom: 0px;
+		width: 100%;
   }
   .close-button, .refresh-button {
-    width: 100%;
+		position: fixed;
+    width: 400px;
     margin: 0px;
     height: 40px;
   }
+	.close-button {
+		top: 0px;
+	}
+	.refresh-button {
+		bottom: 0px;
+	}
   iframe {
+		margin-top: 40px;
     border: 0;
-    width:320px;
-    height: 568px;
-    overflow-y: scroll;
+    width:1200px;
+		height: 100%;
     display: block;
   }
   .pull-right .btn {

@@ -21,16 +21,13 @@ class EnterFormView extends FormView
 		mongo = @mongoInput.getText()
 		
 		@project = new Project(this, name, github, host, mongo)
-		@project.initialize();
+		@project.initialize()
+		@detach()
 			
 	displayIframe: (host, callback) ->
 		@iframe = @iframe || new IframeView()
 		@iframe.attach(host)
 		@iframe.iframe.on 'load', =>
-			callback(@iframe.iframe);
-		
-	detach: ->
-		@iframe.detach()
-		super
+			callback(@iframe.iframe)
 			
 module.exports = EnterFormView

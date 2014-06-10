@@ -32,6 +32,9 @@ class FormView extends View
 	attach: ->
 		atom.workspaceView.append(this)
 		$('.nucleus-form input').first().focus()
+	
+	detach: ->
+		super
 		
 	submitLeft: ->
 		@detach()

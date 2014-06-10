@@ -9,15 +9,14 @@ class IframeView extends View
 				@button class: 'btn close-button', outlet: 'closeButton', 'Close App', =>
 			@iframe class: 'web-frame', outlet: 'iframe', sandbox: sandbox, =>
 			@div class: 'block', =>
-				@button class: 'btn refresh-button', outlet: 'refreshButton', 'Refresh'		
-
-  initialize: (serializeState) ->
-    @closeButton.on 'click', => @detach()
-    @refreshButton.on 'click', => @refresh() 
-
-  refresh: ->
-    if @hasParent()
-      @iframe[0].contentDocument.location.reload()
+				@button class: 'btn refresh-button', outlet: 'refreshButton', 'Refresh'
+					
+	initialize: (serializeState) ->
+		@closeButton.on 'click', => @remove()
+		@refreshButton.on 'click', => @refresh()
+		
+	refresh: ->
+		@iframe[0].contentDocument.location.reload()
 
 	toggle: (url) ->
 		if @hasParent()

@@ -83,8 +83,14 @@ How Spec Pen Works:
 * use `.push()` to essentially add docs with a generated key. It doesn't really appear to be an array to me, just more of the same recursive stuff with hash key. (note `.set()` is a basic call to replace the entire value at a reference location. When u first learn Firebase, u start by trying `ref.set(someValue)`.
 * everything related to firebase is hidden behind the db adapter interface, so you can learn all you need by seeing it in action here: https://github.com/faceyspacey/nucleus/blob/master/lib/core/adapters/database/firebase/db_adapter.js
 
+##CONSOLE TRICKS:
+* `mess('yo whatup')` is how you send a chat from the console
+* `nucleus.app.Router.go()` and `nucleus.app.MobiRouter.go()` send all connected clients to the same route
+* `nucleus.app.login(email, password)` logs everyone in baby!
+
+
 ##TO DO:
 
-* test and get all this to work again. Since it's been refactored, it hasnt been forced to work again.
-* `App.launch()` should also git clone, and should put the code in ~/Nucleus, and toggle git clone vs git pull. It should also open the Atom Project for ~/Nucleus/project_name if not already opened
-* in `nucleus.coffee` the forms after the Enter form need to be tested. The coffeescript will need to be formatted properly (remove hidden tabs)
+* #test and get all this to work again. Since it's been refactored, it hasnt been forced to work again.
+* #`App.launch()` should also git clone, and should put the code in ~/Nucleus, and toggle git clone vs git pull. It should also open the Atom Project for ~/Nucleus/project_name if not already opened
+* #in `nucleus.coffee` the forms after the Enter form need to be tested. The coffeescript will need to be formatted properly (remove hidden tabs)

@@ -17,5 +17,9 @@
       "label": "Go"
       "command": "nucleus:go"
     }
+		{
+      "label": "Eval Selection!"
+      "command": "nucleus:evaluate"
+    }
   ]
 ]

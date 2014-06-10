@@ -1,4 +1,3 @@
-Firebase = require 'firebase'
 FormView = require './abstract_form'
 {$, EditorView} = require 'atom'
 
@@ -9,14 +8,16 @@ class GoFormView extends FormView
 		
 	@buttonLeft: ->
 		super 'Router'
-			
+	
 	@buttonRight: ->
 		super 'MobiRouter'
 
 	submitLeft: ->
-		window.app.go('Router', [@routeInput.getText()])
+		window.nucleus.app.go('Router', [@routeInput.getText()])
+		@detach()
 		
 	submitRight: ->
-		window.app.go('MobiRouter', [@routeInput.getText()])
+		window.nucleus.app.go('MobiRouter', [@routeInput.getText()])
+		@detach()
 
 module.exports = GoFormView

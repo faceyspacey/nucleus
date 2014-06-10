@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "firebase": "~1.0.5",
-    "gitty": "^2.1.0",
     "underscore-plus": "^1.4.1"
   }
 }

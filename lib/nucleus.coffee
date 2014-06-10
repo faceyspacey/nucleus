@@ -1,4 +1,7 @@
 EnterFormView = require './views/forms/enter'
+ChatFormView = require './views/forms/chat'
+LoginFormView = require './views/forms/login'
+GoFormView = require './views/forms/go'
 
 module.exports = 
 	activate: (state) ->
@@ -7,7 +10,6 @@ module.exports =
 		@enter = new EnterFormView(state.enter)
 		atom.workspaceView.command "nucleus:enter", => @enter.attach()
 		
-		return; #below views need to be properly formatted coffee script. tabs are wrong.
 		@chat = new ChatFormView(state.chat)
 		atom.workspaceView.command "nucleus:chat", => @chat.attach()
 		
