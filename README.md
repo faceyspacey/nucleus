@@ -87,7 +87,8 @@ How Spec Pen Works:
 * `mess('yo whatup')` is how you send a chat from the console
 * `nucleus.app.Router.go()` and `nucleus.app.MobiRouter.go()` send all connected clients to the same route
 * `nucleus.app.login(email, password)` logs everyone in baby!
-
+* `nucleus.win` is the entire window context of the iframe!
+* `nucleus.Meteor` is the Meteor object within the iframe
 
 ##TO DO:
 
