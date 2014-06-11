@@ -6,10 +6,9 @@ class IframeView extends View
 		sandbox = 'allow-forms allow-same-origin allow-pointer-lock allow-popups allow-scripts allow-top-navigation'
 		@div class: 'nucleus-frame tool-panel panel-right', =>
 			@div class: 'block', =>
-				@button class: 'btn close-button', outlet: 'closeButton', 'Close App', =>
-			@iframe class: 'web-frame', outlet: 'iframe', sandbox: sandbox, =>
-			@div class: 'block', =>
+				@button class: 'btn close-button', outlet: 'closeButton', 'Close App'
 				@button class: 'btn refresh-button', outlet: 'refreshButton', 'Refresh'
+			@iframe class: 'web-frame', outlet: 'iframe', sandbox: sandbox, =>
 					
 	initialize: (serializeState) ->
 		@closeButton.on 'click', => @remove()
