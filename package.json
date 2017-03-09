@@ -13,7 +13,7 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
-    "firebase": "~1.0.5",
+    "firebase": "~3.7.1",
     "underscore-plus": "^1.4.1"
   }
 }
