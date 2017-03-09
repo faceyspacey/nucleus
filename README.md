@@ -1,5 +1,7 @@
 # NUCLEUS
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/faceyspacey/nucleus.svg)](https://greenkeeper.io/)
+
 ## HOW TO GET IT RUNNIN
 
 * clone this obviously 
